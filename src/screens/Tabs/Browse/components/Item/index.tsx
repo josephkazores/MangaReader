@@ -31,10 +31,14 @@ export const Item: React.FC<Source> = item => {
   }, [pinned])
 
   return (
-    <TouchableOpacity style={styles.root}
-    onPress={() =>
-      navigate('MangaList', { source: item, sort: 'v', desc: true })
-    }>
+    <TouchableOpacity
+      style={styles.root}
+      onPress={() =>
+        navigate('MangaList', {
+          screen: 'Screen',
+          params: { source: item, sort: 'v', desc: true },
+        })
+      }>
       <View style={styles.container}>
         <Image source={item.logo} style={{ height: 30, width: 30 }} />
         <Text style={{ fontSize: 16, marginLeft: 10 }}>
@@ -44,7 +48,10 @@ export const Item: React.FC<Source> = item => {
       <View style={styles.container}>
         <TouchableOpacity
           onPress={() =>
-            navigate('MangaList', { source: item, sort: 'lt', desc: true })
+            navigate('MangaList', {
+              screen: 'Screen',
+              params: { source: item, sort: 'v', desc: true },
+            })
           }>
           <Text
             style={{

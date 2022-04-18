@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		673185B6F1E9B0B7BEF77C84 /* libPods-MangaReader-MangaReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 026CCB13BF761F83356DF4C1 /* libPods-MangaReader-MangaReaderTests.a */; };
+		330DCECFD8C145304E8D5468 /* libPods-MangaReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D21F725C18BED6828DC51288 /* libPods-MangaReader.a */; };
+		57261BD0C236E734F3C749E0 /* libPods-MangaReader-MangaReaderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 742DC432325E735C61F08A52 /* libPods-MangaReader-MangaReaderTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		98B705B7ED11E99861F8B2BF /* libPods-MangaReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C42F46B38DA2E3962A8976FC /* libPods-MangaReader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,6 @@
 		00E356EE1AD99517003FC87E /* MangaReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MangaReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MangaReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MangaReaderTests.m; sourceTree = "<group>"; };
-		026CCB13BF761F83356DF4C1 /* libPods-MangaReader-MangaReaderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MangaReader-MangaReaderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		063600B47D944C30B9EA4754 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		0B3AF2DBF7C040939CB92A6D /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MangaReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,26 +39,27 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MangaReader/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MangaReader/main.m; sourceTree = "<group>"; };
 		228C86CE5DEA446993BB426C /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		2FCF150EADFA931FFC95FA7B /* Pods-MangaReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.release.xcconfig"; path = "Target Support Files/Pods-MangaReader/Pods-MangaReader.release.xcconfig"; sourceTree = "<group>"; };
 		37394F344700411397384203 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		3A9A7412CD504BC8841D722B /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		3B1A6AD5CF6D43CE8E5159B9 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		4CAB7B32F1E20247B12D72AF /* Pods-MangaReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.release.xcconfig"; path = "Target Support Files/Pods-MangaReader/Pods-MangaReader.release.xcconfig"; sourceTree = "<group>"; };
+		53263204AB6B83458FC843D8 /* Pods-MangaReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.debug.xcconfig"; path = "Target Support Files/Pods-MangaReader/Pods-MangaReader.debug.xcconfig"; sourceTree = "<group>"; };
 		6DA3DD33F0F34D7EB245236F /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		77E2629149FF21793E4E2A30 /* Pods-MangaReader-MangaReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader-MangaReaderTests.release.xcconfig"; path = "Target Support Files/Pods-MangaReader-MangaReaderTests/Pods-MangaReader-MangaReaderTests.release.xcconfig"; sourceTree = "<group>"; };
+		742DC432325E735C61F08A52 /* libPods-MangaReader-MangaReaderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MangaReader-MangaReaderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5E5138084F414AAE1C908B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		7CCBDD63C0534794BA30B8B0 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MangaReader/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A3BD741914F8112040FDF30F /* Pods-MangaReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader.debug.xcconfig"; path = "Target Support Files/Pods-MangaReader/Pods-MangaReader.debug.xcconfig"; sourceTree = "<group>"; };
+		84F217091BDF11C83EAB610E /* Pods-MangaReader-MangaReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader-MangaReaderTests.release.xcconfig"; path = "Target Support Files/Pods-MangaReader-MangaReaderTests/Pods-MangaReader-MangaReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		B810B5703559485094160E8A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		BB637886DC6A4474AC4506C8 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		C2BBB8E174AC4EF99F898A37 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		C42F46B38DA2E3962A8976FC /* libPods-MangaReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MangaReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D21F725C18BED6828DC51288 /* libPods-MangaReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MangaReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45664DEB14342DD8F15CF72 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		D534E28D74904F2C98BE5F26 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		E77978988DB7D05F3A1DAC00 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader-MangaReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-MangaReader-MangaReaderTests/Pods-MangaReader-MangaReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C854113DE9401AA32C09ED /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F899E5AF1D8A419B8BC36F56 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		FF78CC165A9355659AF94BE4 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MangaReader-MangaReaderTests.debug.xcconfig"; path = "Target Support Files/Pods-MangaReader-MangaReaderTests/Pods-MangaReader-MangaReaderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				673185B6F1E9B0B7BEF77C84 /* libPods-MangaReader-MangaReaderTests.a in Frameworks */,
+				57261BD0C236E734F3C749E0 /* libPods-MangaReader-MangaReaderTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B705B7ED11E99861F8B2BF /* libPods-MangaReader.a in Frameworks */,
+				330DCECFD8C145304E8D5468 /* libPods-MangaReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				C42F46B38DA2E3962A8976FC /* libPods-MangaReader.a */,
-				026CCB13BF761F83356DF4C1 /* libPods-MangaReader-MangaReaderTests.a */,
+				D21F725C18BED6828DC51288 /* libPods-MangaReader.a */,
+				742DC432325E735C61F08A52 /* libPods-MangaReader-MangaReaderTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,10 +180,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A3BD741914F8112040FDF30F /* Pods-MangaReader.debug.xcconfig */,
-				4CAB7B32F1E20247B12D72AF /* Pods-MangaReader.release.xcconfig */,
-				E77978988DB7D05F3A1DAC00 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */,
-				77E2629149FF21793E4E2A30 /* Pods-MangaReader-MangaReaderTests.release.xcconfig */,
+				53263204AB6B83458FC843D8 /* Pods-MangaReader.debug.xcconfig */,
+				2FCF150EADFA931FFC95FA7B /* Pods-MangaReader.release.xcconfig */,
+				FF78CC165A9355659AF94BE4 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */,
+				84F217091BDF11C83EAB610E /* Pods-MangaReader-MangaReaderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -195,11 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MangaReaderTests" */;
 			buildPhases = (
-				61980B949405421A2BEBA10D /* [CP] Check Pods Manifest.lock */,
+				09621B62C9CECA58107C18C0 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				EDB64EBD85312979DF917E0C /* [CP] Copy Pods Resources */,
+				6C90873F30944CEB600F5FDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,13 +215,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MangaReader" */;
 			buildPhases = (
-				2AC92AB12A527B141D8E0195 /* [CP] Check Pods Manifest.lock */,
+				89D501047223BEC2C53B7908 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				12F31852CFB599E2527D6CB3 /* [CP] Copy Pods Resources */,
+				DEB28ACE3ECFE2548A4D6C5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,46 +302,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		12F31852CFB599E2527D6CB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2AC92AB12A527B141D8E0195 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MangaReader-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		61980B949405421A2BEBA10D /* [CP] Check Pods Manifest.lock */ = {
+		09621B62C9CECA58107C18C0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,7 +324,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EDB64EBD85312979DF917E0C /* [CP] Copy Pods Resources */ = {
+		6C90873F30944CEB600F5FDF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,6 +339,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MangaReader-MangaReaderTests/Pods-MangaReader-MangaReaderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89D501047223BEC2C53B7908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MangaReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEB28ACE3ECFE2548A4D6C5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MangaReader/Pods-MangaReader-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -432,7 +432,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E77978988DB7D05F3A1DAC00 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */;
+			baseConfigurationReference = FF78CC165A9355659AF94BE4 /* Pods-MangaReader-MangaReaderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -459,7 +459,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77E2629149FF21793E4E2A30 /* Pods-MangaReader-MangaReaderTests.release.xcconfig */;
+			baseConfigurationReference = 84F217091BDF11C83EAB610E /* Pods-MangaReader-MangaReaderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -483,7 +483,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3BD741914F8112040FDF30F /* Pods-MangaReader.debug.xcconfig */;
+			baseConfigurationReference = 53263204AB6B83458FC843D8 /* Pods-MangaReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -512,7 +512,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CAB7B32F1E20247B12D72AF /* Pods-MangaReader.release.xcconfig */;
+			baseConfigurationReference = 2FCF150EADFA931FFC95FA7B /* Pods-MangaReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

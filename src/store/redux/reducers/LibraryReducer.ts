@@ -3,10 +3,16 @@ import { LibraryReducerAction } from '../../types'
 
 declare type State = {
   library: Anime[]
+  preferences: {
+    column: number
+  }
 }
 
 const INITIAL_STATE: State = {
-    library: [],
+  library: [],
+  preferences: {
+    column: 4,
+  },
 }
 
 export default (state = INITIAL_STATE, action: LibraryReducerAction) => {
@@ -22,7 +28,15 @@ export default (state = INITIAL_STATE, action: LibraryReducerAction) => {
       )
       return {
         ...state,
-        library: newState
+        library: newState,
+      }
+    case 'UPDATE_PREFERENCES_COLUMN':
+      return {
+        ...state,
+        preferences: {
+          ...state.preferences,
+          column: action.payload,
+        },
       }
     default:
       return state

@@ -1,3 +1,5 @@
+import { DrawerScreenProps } from '@react-navigation/drawer'
+import { NavigatorScreenParams, ParamListBase } from '@react-navigation/native'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { ImageSourcePropType } from 'react-native'
 
@@ -31,7 +33,6 @@ export declare type Screens = {
 
 export declare type Anime = {
   source: Source
-  SeriesId?: number
   IndexName: string
   SeriesName?: string
   chapters?: Chapter[]
@@ -70,13 +71,9 @@ export declare type Chapter = {
 }
 
 export declare type RootStackParamList = {
-  Home: undefined
+  Library: undefined
   MangaDetails: Anime
-  MangaList: {
-    source: Source
-    sort: 'v' | 'vm' | 'lt' | 'y' | 's'
-    desc: boolean
-  }
+  MangaList: NavigatorScreenParams<MangaListDrawerParamList>
 }
 
 export declare type RootTabParamList = {
@@ -84,13 +81,33 @@ export declare type RootTabParamList = {
   Browse: undefined
   Settings: undefined
 }
+export declare type MangaListDrawerParamList = {
+  Screen: {
+    source: Source
+    sort: 'v' | 'vm' | 'lt' | 'y' | 's'
+    desc: boolean
+  }
+}
+
+export declare type LibraryDrawerParamList = {
+  Screen: undefined
+}
 
 export declare type MangaDetailsProps = NativeStackScreenProps<
   RootStackParamList,
   'MangaDetails'
 >
 
-export declare type MangaListProps = NativeStackScreenProps<
-  RootStackParamList,
-  'MangaList'
+export declare type SubNavigator<T extends ParamListBase> = {
+  [K in keyof T]: { screen?: K; params?: T[K] }
+}[keyof T]
+
+export declare type MangaListDrawerProps = DrawerScreenProps<
+  MangaListDrawerParamList,
+  'Screen'
+>
+
+export declare type LibraryDrawerProps = DrawerScreenProps<
+  LibraryDrawerParamList,
+  'Screen'
 >

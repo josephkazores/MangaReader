@@ -1,36 +1,19 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
-import { useSelector } from 'react-redux'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { SideDrawer } from './components/index'
+import { Screen } from './Screen'
 
-import { Header } from '../../../components'
-import { AnimeCard } from '../../../components/AnimeCard'
-import { RootState } from '../../../store/types'
+const Drawer = createDrawerNavigator()
 
 export const Library: React.FC = () => {
-  const { library } = useSelector((state: RootState) => state.libraryReducer)
-
   return (
-    <View style={{ flexGrow: 1, paddingBottom: 120 }}>
-      <Header
-        title="Library"
-        leftAction={{
-          name: 'search',
-          type: 'material',
-        }}
-        rightActions={[
-          {
-            name: 'settings',
-            type: 'material',
-          },
-        ]}
+    <Drawer.Navigator
+      screenOptions={{ drawerPosition: 'right', headerShown: false }}
+      drawerContent={props => <SideDrawer {...props} />}>
+      <Drawer.Screen
+        name="Screen"
+        component={Screen}
       />
-      <View style={{ flexGrow: 1 }}>
-        <FlatList
-          data={library}
-          numColumns={3}
-          renderItem={({ item }) => <AnimeCard {...item} />}
-        />
-      </View>
-    </View>
+    </Drawer.Navigator>
   )
 }

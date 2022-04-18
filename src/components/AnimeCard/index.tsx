@@ -1,21 +1,24 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
-import { Image, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Image, TouchableOpacity, View } from 'react-native'
 import { Text } from 'react-native-paper'
 
 import { Sources } from '../../constants'
 import { Anime, RootStackParamList } from '../../types'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/types'
 
 export const AnimeCard: React.FC<Anime> = item => {
   const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const { preferences } = useSelector((state: RootState) => state.libraryReducer)
 
   return (
     <TouchableOpacity
-      key={`${item.SeriesName}`}
+      key={`${item.SeriesName} ${item.author?.join('')}`}
       onPress={() => navigate('MangaDetails', item)}
       style={{
-        flex: 1 / 3,
+        flex: 1 / preferences.column,
         alignItems: 'center',
       }}>
       <Image
@@ -24,16 +27,20 @@ export const AnimeCard: React.FC<Anime> = item => {
             item.IndexName,
           ),
         }}
-        style={{ height: 185, width: 125, alignItems: 'center' }}
+        style={{
+          height: (Dimensions.get('screen').width / (preferences.column + 0.5)) * 1.5,
+          width: Dimensions.get('screen').width / (preferences.column + 0.5),
+          alignItems: 'center',
+        }}
       />
       <View
         style={{
-          paddingBottom: 10,
+          paddingBottom: 5,
           justifyContent: 'center',
           flex: 1,
         }}>
         <Text numberOfLines={2} style={{ fontWeight: '600' }}>
-          {item.IndexName}
+          {item.SeriesName}
         </Text>
       </View>
     </TouchableOpacity>

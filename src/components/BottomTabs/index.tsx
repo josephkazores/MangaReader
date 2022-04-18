@@ -2,23 +2,16 @@ import React from 'react'
 import { Text } from 'react-native-paper'
 import { Pressable, View, useWindowDimensions } from 'react-native'
 import { Icon } from 'react-native-elements'
-import styles from './styles'
 import { useTheme } from '../../provider'
-import { RootState } from '../../store/types'
-import { useSelector } from 'react-redux'
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 
-export const BottomTabs: React.FC<any> = ({
+export const BottomTabs: React.FC<BottomTabBarProps> = ({
   state,
   descriptors,
   navigation,
 }) => {
   const { theme } = useTheme()
   const { width } = useWindowDimensions()
-  const focusedOptions = descriptors[state.routes[state.index].key].options
-
-  if (focusedOptions.tabBarVisible === false) {
-    return null
-  }
 
   return (
     <View

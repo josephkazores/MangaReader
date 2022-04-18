@@ -7,7 +7,7 @@ import { BottomTabs } from '../../components'
 
 const Tab = createBottomTabNavigator()
 
-export const TabNavigation = () => {
+export const TabNavigation: React.FC = () => {
   const { theme } = useTheme()
   return (
     <Tab.Navigator

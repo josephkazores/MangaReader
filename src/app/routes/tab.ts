@@ -1,4 +1,4 @@
-import { Browse, Library, Settings } from '../../screens'
+import { Browse, Settings, Library } from '../../screens'
 import { Screens } from '../../types'
 
 export const homeTab: Screens = [

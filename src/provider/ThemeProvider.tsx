@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react'
-import { StatusBar, View } from 'react-native'
+import { StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { Provider as PaperProvider, Portal } from 'react-native-paper'
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,10 +18,10 @@ const ThemeContext = createContext<ThemeContextTypes>({})
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const {darkMode} = useSelector((state: RootState)=> state.themeReducer)
+  const { darkMode } = useSelector((state: RootState) => state.themeReducer)
   const dispatch = useDispatch<AppDispatch>()
 
-  const toggleDarkMode = () => dispatch({type: 'TOGGLE_DARK_MODE'})
+  const toggleDarkMode = () => dispatch({ type: 'TOGGLE_DARK_MODE' })
 
   const theme = darkMode ? DarkTheme : DefaultTheme
 
@@ -31,7 +31,6 @@ export const ThemeProvider: React.FC = ({ children }) => {
         <NavigationContainer theme={theme}>
           <ThemeContext.Provider
             value={{
-              darkMode,
               toggleDarkMode,
               theme,
             }}>

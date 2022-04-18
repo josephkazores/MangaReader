@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Image, TouchableOpacity, View, FlatList } from 'react-native'
+import React, { useState } from 'react'
+import {View, FlatList } from 'react-native'
 import { Text } from 'react-native-paper'
-import { useNavigation } from '@react-navigation/native'
-import { StackNavigationProp } from '@react-navigation/stack'
 
 import { Header } from '../../../components'
-import { Mangasee } from '../../../constants'
-import { Anime, RootStackParamList } from '../../../types'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../../store/types'
 import { Item } from './components'
 import styles from './styles'
 
 export const Browse: React.FC = () => {
-  const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>()
   const { all, pinned } = useSelector(
     (state: RootState) => state.sourcesReducer,
   )

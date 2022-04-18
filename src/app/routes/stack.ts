@@ -1,12 +1,12 @@
-import { TabNavigation } from './../nav/TabNavigation';
+import { TabNavigation } from './../nav';
+import { MangaDetails, MangaList } from '../../screens';
 
 import { Screens } from '../../types'
-import { MangaDetails, MangaList } from '../../screens';
 
 export const stack: Screens = [
   {
       component: TabNavigation,
-      name: "Home",
+      name: "Library",
   },
   {
       component: MangaDetails,
