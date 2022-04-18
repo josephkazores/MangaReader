@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextInput, TextInputProps, View, ViewStyle } from 'react-native'
+import { TextInput, View, ViewStyle } from 'react-native'
 import { Text } from 'react-native-paper'
 import { Icon, IconProps } from 'react-native-elements'
 

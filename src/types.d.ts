@@ -1,5 +1,5 @@
 import { DrawerScreenProps } from '@react-navigation/drawer'
-import { NavigatorScreenParams, ParamListBase } from '@react-navigation/native'
+import { NavigatorScreenParams } from '@react-navigation/native'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { ImageSourcePropType } from 'react-native'
 
@@ -97,10 +97,6 @@ export declare type MangaDetailsProps = NativeStackScreenProps<
   RootStackParamList,
   'MangaDetails'
 >
-
-export declare type SubNavigator<T extends ParamListBase> = {
-  [K in keyof T]: { screen?: K; params?: T[K] }
-}[keyof T]
 
 export declare type MangaListDrawerProps = DrawerScreenProps<
   MangaListDrawerParamList,

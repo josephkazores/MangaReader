@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Image, TouchableOpacity, View, FlatList } from 'react-native'
-import { Text } from 'react-native-paper'
+import { View, FlatList } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { Header, AnimeCard } from '../../../../components'
