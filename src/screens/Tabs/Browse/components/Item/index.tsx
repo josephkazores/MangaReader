@@ -50,7 +50,7 @@ export const Item: React.FC<Source> = item => {
           onPress={() =>
             navigate('MangaList', {
               screen: 'Screen',
-              params: { source: item, sort: 'v', desc: true },
+              params: { source: item, sort: 'lt', desc: true },
             })
           }>
           <Text

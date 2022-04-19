@@ -8,7 +8,6 @@ import { useTheme } from '../../provider'
 
 interface ActionProps extends IconProps {
   onChangeText?: (value: any) => void
-  value?: any
 }
 
 interface Props {
@@ -18,22 +17,41 @@ interface Props {
   containerStyle?: ViewStyle
 }
 
+const SEARCH_DEFAULT_VALUE = {
+  onChangeText: (value: string) => {},
+  value: '',
+  status: false,
+}
+
+declare type ActiveSearch = {
+  onChangeText: ((value: string) => void ) | undefined,
+  value: string,
+  status: boolean,
+}
+
 export const Header: React.FC<Props> = ({
   leftAction,
   rightActions,
   title,
-  containerStyle
+  containerStyle,
 }) => {
   const { theme } = useTheme()
-  const [activeSearch, setActiveSearch] = useState(false)
+  const [activeSearch, setActiveSearch] =
+    useState<ActiveSearch>(SEARCH_DEFAULT_VALUE)
 
   return (
     <View style={[styles.root, containerStyle]}>
-      {activeSearch ? (
+      {activeSearch.status ? (
         <>
           <TextInput
-            value={leftAction?.value}
-            onChangeText={leftAction?.onChangeText}
+            value={activeSearch?.value}
+            onChangeText={value => {
+              setActiveSearch(prevState => ({
+                ...prevState,
+                value: value,
+              }))
+              activeSearch?.onChangeText?.(value)
+            }}
             placeholder="Search"
             placeholderTextColor={theme?.colors.primary}
             style={{
@@ -50,10 +68,7 @@ export const Header: React.FC<Props> = ({
             type="material"
             tvParallaxProperties
             color={theme?.colors.primary}
-            onPress={() => {
-              setActiveSearch(false)
-              leftAction?.onChangeText?.('')
-            }}
+            onPress={() => setActiveSearch(SEARCH_DEFAULT_VALUE)}
           />
         </>
       ) : (
@@ -69,7 +84,12 @@ export const Header: React.FC<Props> = ({
                 leftAction?.onPress
                   ? leftAction?.onPress
                   : leftAction?.name === 'search'
-                  ? () => setActiveSearch(true)
+                  ? () =>
+                      setActiveSearch({
+                        value: '',
+                        onChangeText: leftAction?.onChangeText,
+                        status: true,
+                      })
                   : () => {}
               }
               tvParallaxProperties
@@ -87,7 +107,12 @@ export const Header: React.FC<Props> = ({
                   action?.onPress
                     ? action?.onPress
                     : action?.name === 'search'
-                    ? () => setActiveSearch(true)
+                    ? () =>
+                        setActiveSearch({
+                          value: '',
+                          onChangeText: action?.onChangeText,
+                          status: true,
+                        })
                     : () => {}
                 }
                 tvParallaxProperties

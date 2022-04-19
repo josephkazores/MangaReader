@@ -1,3 +1,4 @@
+import { debounce } from 'lodash'
 import React, { useEffect, useState } from 'react'
 import { View, FlatList } from 'react-native'
 import { useSelector } from 'react-redux'
@@ -13,7 +14,6 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
 }) => {
   const { preferences } = useSelector((state: RootState) => state.libraryReducer)
   const [list, setList] = useState<Anime[] | undefined>([])
-  const [searchValue, setSearchValue] = useState('')
   const [regex, setRegex] = useState<RegExp>()
   const [loading, setLoading] = useState<boolean>(false)
   const { source, sort, desc } = params
@@ -29,11 +29,6 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
     })()
   }, [sort, desc, source])
 
-  useEffect(() => {
-    if (searchValue) {
-      setRegex(new RegExp(searchValue, 'gi'))
-    }
-  }, [searchValue])
 
   return (
     <View style={{ flexGrow: 1, paddingBottom: 100 }}>
@@ -48,20 +43,19 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
           {
             name: 'search',
             type: 'material',
-            onChangeText: val => setSearchValue(val),
-            value: searchValue,
+            onChangeText: debounce(val =>  setRegex(new RegExp(val, 'gi'))),
           },
           {
             name: 'filter-variant',
             type: 'material-community',
-            onPress: toggleDrawer
+            onPress: toggleDrawer,
           },
         ]}
       />
       <View style={{ flexGrow: 1, paddingHorizontal: 5 }}>
         <FlatList
           data={
-            searchValue
+            regex
               ? list?.filter(
                   anime =>
                     regex?.test(anime.IndexName || '') ||

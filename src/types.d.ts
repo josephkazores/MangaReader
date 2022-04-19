@@ -71,7 +71,7 @@ export declare type Chapter = {
 }
 
 export declare type RootStackParamList = {
-  Library: undefined
+  Library: NavigatorScreenParams<LibraryDrawerParamList>
   MangaDetails: Anime
   MangaList: NavigatorScreenParams<MangaListDrawerParamList>
 }
