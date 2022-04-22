@@ -13,7 +13,7 @@ export const Details: React.FC<Anime> = item => {
   const { library } = useSelector((state: RootState) => state.libraryReducer)
   const dispatch = useDispatch<AppDispatch>()
   const { theme } = useTheme()
-  const { IndexName, author, status, source } = item
+  const { IndexName, author, status, source, SeriesName } = item
 
   const [addedToLibrary, setAddedToLibrary] = useState<boolean>(false)
 
@@ -39,7 +39,16 @@ export const Details: React.FC<Anime> = item => {
           style={{ height: 180, width: 120, borderRadius: 5 }}
         />
         <View style={{ padding: 15, flexGrow: 1, justifyContent: 'flex-end' }}>
-          <Text style={{ fontSize: 30, fontWeight: '700' }}>{IndexName}</Text>
+          <Text
+            numberOfLines={3}
+            ellipsizeMode="tail"
+            style={{
+              fontSize: 26,
+              fontWeight: '700',
+              width: Dimensions.get('screen').width - 150,
+            }}>
+            {SeriesName}
+          </Text>
           <Text
             style={{
               fontWeight: '500',

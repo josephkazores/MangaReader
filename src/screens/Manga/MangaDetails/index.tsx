@@ -65,7 +65,7 @@ export const MangaDetails: React.FC<MangaDetailsProps> = ({ route }) => {
           )
           switch (result.platform) {
             case 'ios':
-              setFadeColor(hexToRgb(result.secondary, 0.7))
+              setFadeColor(hexToRgb(result.primary, 0.7))
               break
             default:
               throw new Error('Unexpected platform key')
