@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextTypes>({})
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const { darkMode } = useSelector((state: RootState) => state.themeReducer)
+  const { darkMode, statusBar } = useSelector((state: RootState) => state.themeReducer)
   const dispatch = useDispatch<AppDispatch>()
 
   const toggleDarkMode = () => dispatch({ type: 'TOGGLE_DARK_MODE' })
@@ -37,7 +37,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
             <StatusBar
               backgroundColor={theme.colors.background}
               barStyle={theme.dark ? 'light-content' : 'dark-content'}
-              hidden={false}
+              hidden={statusBar}
             />
             {children}
           </ThemeContext.Provider>

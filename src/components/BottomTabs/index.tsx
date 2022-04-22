@@ -23,14 +23,9 @@ export const BottomTabs: React.FC<BottomTabBarProps> = ({
         paddingHorizontal: Math.round(width / (state.routes.length * 4) + 5),
       }}>
       {state.routes.length > 1 &&
-        state.routes.map((route: any, index: number) => {
+        state.routes.map((route, index) => {
           const { options } = descriptors[route.key]
-          const label =
-            options.tabBarLabel !== undefined
-              ? options.tabBarLabel
-              : options.title !== undefined
-              ? options.title
-              : route.name
+          const label = options.tabBarLabel || options.title || route.name
 
           const isFocused = state.index === index
 
@@ -55,7 +50,7 @@ export const BottomTabs: React.FC<BottomTabBarProps> = ({
 
           return (
             <Pressable
-              key={label}
+              key={`${label}-${index}`}
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
               testID={options.tabBarTestID}

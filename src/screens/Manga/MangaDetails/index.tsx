@@ -120,7 +120,9 @@ export const MangaDetails: React.FC<MangaDetailsProps> = ({
             borderColor: theme?.colors.border,
             borderTopWidth: 1,
           }}
-          renderItem={({ item }) => <Chapter {...item} />}
+          renderItem={({ item }) => (
+            <Chapter title={route.params.IndexName} source={source} {...item} />
+          )}
         />
       </View>
     </View>

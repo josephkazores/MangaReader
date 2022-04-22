@@ -6,7 +6,7 @@ import {
 import { View } from 'react-native'
 import { Text } from 'react-native-paper'
 
-export const SideDrawer: React.FC<DrawerContentComponentProps> = props => {
+export const CustomDrawer: React.FC<DrawerContentComponentProps> = props => {
   return (
     <DrawerContentScrollView {...props}>
       <View></View>

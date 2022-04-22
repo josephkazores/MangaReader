@@ -1,7 +1,8 @@
+import { numToString } from './../../utils/helpers';
 import Axios from 'axios'
 import * as cheerio from 'cheerio'
 import { MangaSeeLogo } from '../../assets'
-import { Anime } from '../../types'
+import { Anime, Chapter } from '../../types'
 
 const image_source = (name = '') => `https://cover.nep.li/cover/${name}.jpg`
 
@@ -96,8 +97,43 @@ const loadMangaDetails = async (name = '') => {
   }
 }
 
+const loadChapterImages = async (animeTitle: string, chapter: number) => {
+  try {
+    const response = await Axios.get(
+      `https://mangasee123.com/read-online/${animeTitle}-chapter-${chapter}.html`,
+    )
+    if (response.status === 200) {
+      const $ = cheerio.load(response.data)
+      const data: any = {
+        chapter: JSON.parse(
+          $.html()
+            .split('vm.CurChapter = ')[1]
+            .split('vm.CurPathName = ')[0]
+            .split('};')[0]
+            .split('\\')
+            .join('') + '}',
+        ),
+        pathName: JSON.parse(
+          $.html().split('vm.CurPathName = ')[1].split(';')[0],
+        ),
+      }
+      const page = parseInt(data.chapter.Page)
+      const chapterList: string[] = []
+      for(let curPage=1; curPage<=page; curPage++){
+        chapterList.push(`https://${data.pathName}/manga/${animeTitle}/${numToString(chapter, 4)}-${numToString(curPage, 3)}.png`)
+      }
+      return chapterList
+    } else {
+      throw new Error(JSON.stringify(response))
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const Mangasee = {
   image_source,
   loadMangaDetails,
   loadMangaList,
+  loadChapterImages,
 }

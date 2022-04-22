@@ -1,4 +1,5 @@
 export * from './BottomTabs'
 export * from './Header'
 export * from './AnimeCard'
-export * from  './EmptyComponent'
+export * from './EmptyComponent'
+export * from './Drawer'

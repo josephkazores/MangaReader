@@ -28,7 +28,8 @@ export const AnimeCard: React.FC<Anime> = item => {
           ),
         }}
         style={{
-          height: (Dimensions.get('screen').width / (preferences.column + 0.5)) * 1.5,
+          height:
+            (Dimensions.get('screen').width / (preferences.column + 0.5)) * 1.5,
           width: Dimensions.get('screen').width / (preferences.column + 0.5),
           alignItems: 'center',
         }}
@@ -39,7 +40,12 @@ export const AnimeCard: React.FC<Anime> = item => {
           justifyContent: 'center',
           flex: 1,
         }}>
-        <Text numberOfLines={2} style={{ fontWeight: '600' }}>
+        <Text
+          numberOfLines={2}
+          style={{
+            fontWeight: '600',
+            textAlign: 'center',
+          }}>
           {item.SeriesName}
         </Text>
       </View>

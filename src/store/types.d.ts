@@ -4,9 +4,11 @@ import { store } from './index'
 export declare type RootState = ReturnType<typeof store.getState>
 export declare type AppDispatch = typeof store.dispatch
 
-export declare type ThemeReducerAction = {
-  type: 'TOGGLE_DARK_MODE'
-}
+export declare type ThemeReducerAction =
+  | {
+      type: 'TOGGLE_DARK_MODE'
+    }
+  | { type: 'TOGGLE_STATUS_BAR' }
 
 export declare type SourcesReducerAction =
   | {

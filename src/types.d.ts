@@ -23,13 +23,7 @@ export declare type Icon = {
   size: number
 }
 
-export declare type Screens = {
-  name: string
-  component: React.FC<any>
-  options?: {
-    icon?: Icon
-  }
-}[]
+////---- Anime Types ----////
 
 export declare type Anime = {
   source: Source
@@ -64,16 +58,24 @@ export declare type Source = {
 }
 
 export declare type Chapter = {
-  Chapter?: number
+  Chapter: number
   Type?: string
   Date?: string
   ChapterName?: object[]
 }
 
+
+////---- Root Navigation Params Types ----////
+
 export declare type RootStackParamList = {
   Library: NavigatorScreenParams<LibraryDrawerParamList>
   MangaDetails: Anime
   MangaList: NavigatorScreenParams<MangaListDrawerParamList>
+  Reader: {
+    animeTitle: string
+    chapter: number
+    source: Source
+  }
 }
 
 export declare type RootTabParamList = {
@@ -81,6 +83,10 @@ export declare type RootTabParamList = {
   Browse: undefined
   Settings: undefined
 }
+
+
+////---- Drawer Params Types ----////
+
 export declare type MangaListDrawerParamList = {
   Screen: {
     source: Source
@@ -93,9 +99,25 @@ export declare type LibraryDrawerParamList = {
   Screen: undefined
 }
 
+
+////---- Screen Params Types ----////
+
+export declare type Screens = {
+  name: string
+  component: React.FC<any>
+  options?: {
+    icon?: Icon
+  }
+}[]
+
 export declare type MangaDetailsProps = NativeStackScreenProps<
   RootStackParamList,
   'MangaDetails'
+>
+
+export declare type ReaderProps = NativeStackScreenProps<
+  RootStackParamList,
+  'Reader'
 >
 
 export declare type MangaListDrawerProps = DrawerScreenProps<

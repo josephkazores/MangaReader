@@ -2,10 +2,12 @@ import { ThemeReducerAction } from '../../types'
 
 declare type State = {
   darkMode: boolean
+  statusBar: boolean
 }
 
 const INITIAL_STATE: State = {
-  darkMode: true
+  darkMode: true,
+  statusBar: false
 }
 
 export default (state = INITIAL_STATE, action: ThemeReducerAction) => {
@@ -14,6 +16,11 @@ export default (state = INITIAL_STATE, action: ThemeReducerAction) => {
       return {
         ...state,
         darkMode: !state.darkMode,
+      }
+    case 'TOGGLE_STATUS_BAR':
+      return {
+        ...state,
+        statusBar: !state.statusBar,
       }
     default:
       return state

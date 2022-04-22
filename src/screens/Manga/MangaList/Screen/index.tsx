@@ -9,10 +9,12 @@ import { RootState } from '../../../../store/types'
 import { Anime, MangaListDrawerProps } from '../../../../types'
 
 export const Screen: React.FC<MangaListDrawerProps> = ({
-  navigation: { navigate, goBack, toggleDrawer},
+  navigation: { navigate, goBack, toggleDrawer },
   route: { params },
 }) => {
-  const { preferences } = useSelector((state: RootState) => state.libraryReducer)
+  const { preferences } = useSelector(
+    (state: RootState) => state.libraryReducer,
+  )
   const [list, setList] = useState<Anime[] | undefined>([])
   const [regex, setRegex] = useState<RegExp>()
   const [loading, setLoading] = useState<boolean>(false)
@@ -29,7 +31,6 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
     })()
   }, [sort, desc, source])
 
-
   return (
     <View style={{ flexGrow: 1, paddingBottom: 100 }}>
       <Header
@@ -43,7 +44,7 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
           {
             name: 'search',
             type: 'material',
-            onChangeText: debounce(val =>  setRegex(new RegExp(val, 'gi'))),
+            onChangeText: debounce(val => setRegex(new RegExp(val, 'gi'))),
           },
           {
             name: 'filter-variant',

@@ -10,7 +10,7 @@ import { LibraryDrawerProps } from '../../../../types'
 export const Screen: React.FC<LibraryDrawerProps> = ({
   navigation: { toggleDrawer },
 }) => {
-  const { library, preferences } = useSelector(
+  const { library, preferences  } = useSelector(
     (state: RootState) => state.libraryReducer,
   )
 
