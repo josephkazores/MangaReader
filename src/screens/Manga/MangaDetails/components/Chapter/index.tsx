@@ -18,7 +18,7 @@ interface Props extends ChapterProps {
   source: Source
 }
 
-export const Chapter: React.FC<Props> = item => {
+export const Chapter: React.FC<Props> = ({title, source, ...item}) => {
   const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>()
   const { theme } = useTheme()
 
@@ -26,9 +26,9 @@ export const Chapter: React.FC<Props> = item => {
     <TouchableOpacity
       onPress={() =>
         navigate('Reader', {
-          animeTitle: item.title,
-          chapter: item.Chapter,
-          source: item.source,
+          animeTitle: title,
+          chapter: item,
+          source: source,
         })
       }
       style={{

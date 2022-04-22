@@ -87,6 +87,7 @@ const loadMangaDetails = async (name = '') => {
         ).map((item: { Chapter: any }) => ({
           ...item,
           Chapter: parseInt(item.Chapter.slice(1)) * 0.1,
+          index: parseInt(item.Chapter[0])
         })),
       }
     } else {
@@ -97,10 +98,12 @@ const loadMangaDetails = async (name = '') => {
   }
 }
 
-const loadChapterImages = async (animeTitle: string, chapter: number) => {
+const loadChapterImages = async (animeTitle: string, chapter: Chapter) => {
   try {
     const response = await Axios.get(
-      `https://mangasee123.com/read-online/${animeTitle}-chapter-${chapter}.html`,
+      `https://mangasee123.com/read-online/${animeTitle}-chapter-${
+        chapter.Chapter
+      }${chapter.index === 2 && '-index-2'}.html`,
     )
     if (response.status === 200) {
       const $ = cheerio.load(response.data)
@@ -119,8 +122,13 @@ const loadChapterImages = async (animeTitle: string, chapter: number) => {
       }
       const page = parseInt(data.chapter.Page)
       const chapterList: string[] = []
-      for(let curPage=1; curPage<=page; curPage++){
-        chapterList.push(`https://${data.pathName}/manga/${animeTitle}/${numToString(chapter, 4)}-${numToString(curPage, 3)}.png`)
+      for (let curPage = 1; curPage <= page; curPage++) {
+        chapterList.push(
+          `https://${data.pathName}/manga/${animeTitle}/${numToString(
+            chapter.Chapter,
+            4,
+          )}-${numToString(curPage, 3)}.png`,
+        )
       }
       return chapterList
     } else {

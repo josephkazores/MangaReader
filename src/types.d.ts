@@ -62,6 +62,7 @@ export declare type Chapter = {
   Type?: string
   Date?: string
   ChapterName?: object[]
+  index: number
 }
 
 
@@ -73,7 +74,7 @@ export declare type RootStackParamList = {
   MangaList: NavigatorScreenParams<MangaListDrawerParamList>
   Reader: {
     animeTitle: string
-    chapter: number
+    chapter: Chapter
     source: Source
   }
 }
