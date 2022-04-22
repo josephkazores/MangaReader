@@ -5,9 +5,9 @@ export declare type RootState = ReturnType<typeof store.getState>
 export declare type AppDispatch = typeof store.dispatch
 
 export declare type ThemeReducerAction =
-  | {
-      type: 'TOGGLE_DARK_MODE'
-    }
+  | { type: 'TOGGLE_DARK_MODE' }
+  | { type: 'SHOW_STATUS_BAR' }
+  | { type: 'HIDE_STATUS_BAR' }
   | { type: 'TOGGLE_STATUS_BAR' }
 
 export declare type SourcesReducerAction =

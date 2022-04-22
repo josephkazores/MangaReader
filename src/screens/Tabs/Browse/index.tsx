@@ -13,7 +13,6 @@ export const Browse: React.FC = () => {
     (state: RootState) => state.sourcesReducer,
   )
 
-  const [searchValue, setSearchValue] = useState('')
 
   return (
     <View style={{ flexGrow: 1, paddingBottom: 100 }}>
@@ -22,8 +21,6 @@ export const Browse: React.FC = () => {
         leftAction={{
           name: 'search',
           type: 'material',
-          onChangeText: val => setSearchValue(val),
-          value: searchValue,
         }}
         rightActions={[
           {

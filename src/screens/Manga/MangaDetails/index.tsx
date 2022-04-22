@@ -11,10 +11,7 @@ import { Chapter as ChapterTypes, MangaDetailsProps } from '../../../types'
 import { hexToRgb } from '../../../utils'
 import { Chapter, Details } from './components'
 
-export const MangaDetails: React.FC<MangaDetailsProps> = ({
-  route,
-  navigation,
-}) => {
+export const MangaDetails: React.FC<MangaDetailsProps> = ({ route }) => {
   const { theme } = useTheme()
 
   const [list, setList] = useState<
@@ -102,14 +99,7 @@ export const MangaDetails: React.FC<MangaDetailsProps> = ({
           ]}
         />
       </ImageBackground>
-      <Header
-        leftAction={{
-          name: 'arrow-back',
-          type: 'ionicons',
-          onPress: () => navigation.goBack(),
-        }}
-        rightActions={RightActions}
-      />
+      <Header rightActions={RightActions} />
       <View style={{ flexGrow: 1 }}>
         <Details {...route.params} />
         <FlatList
@@ -121,7 +111,7 @@ export const MangaDetails: React.FC<MangaDetailsProps> = ({
             borderTopWidth: 1,
           }}
           renderItem={({ item }) => (
-            <Chapter title={route.params.IndexName} source={source} {...item} />
+            <Chapter anime={route.params} {...item} />
           )}
         />
       </View>

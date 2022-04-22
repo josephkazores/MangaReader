@@ -7,7 +7,7 @@ declare type State = {
 
 const INITIAL_STATE: State = {
   darkMode: true,
-  statusBar: false
+  statusBar: false,
 }
 
 export default (state = INITIAL_STATE, action: ThemeReducerAction) => {
@@ -16,6 +16,16 @@ export default (state = INITIAL_STATE, action: ThemeReducerAction) => {
       return {
         ...state,
         darkMode: !state.darkMode,
+      }
+    case 'SHOW_STATUS_BAR':
+      return {
+        ...state,
+        statusBar: false,
+      }
+    case 'HIDE_STATUS_BAR':
+      return {
+        ...state,
+        statusBar: true,
       }
     case 'TOGGLE_STATUS_BAR':
       return {

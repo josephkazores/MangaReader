@@ -5,30 +5,29 @@ import { Text } from 'react-native-paper'
 import { Icon } from 'react-native-elements'
 
 import {
+  Anime,
   Chapter as ChapterProps,
   RootStackParamList,
-  Source,
 } from '../../../../../types'
 import { useTheme } from '../../../../../provider'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
 interface Props extends ChapterProps {
-  title: string
-  source: Source
+  anime: Anime
 }
 
-export const Chapter: React.FC<Props> = ({title, source, ...item}) => {
+export const Chapter: React.FC<Props> = ({anime, ...item}) => {
   const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>()
   const { theme } = useTheme()
+  const { source } = anime
 
   return (
     <TouchableOpacity
       onPress={() =>
         navigate('Reader', {
-          animeTitle: title,
+          anime: anime,
           chapter: item,
-          source: source,
         })
       }
       style={{

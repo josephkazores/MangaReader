@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { TextInput, View, ViewStyle } from 'react-native'
+import { StyleProp, TextInput, View, ViewStyle } from 'react-native'
 import { Text } from 'react-native-paper'
 import { Icon, IconProps } from 'react-native-elements'
 
 import styles from './styles'
 import { useTheme } from '../../provider'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from '../../types'
 
 interface ActionProps extends IconProps {
   onChangeText?: (value: any) => void
@@ -14,7 +17,7 @@ interface Props {
   title?: string
   leftAction?: ActionProps
   rightActions?: ActionProps[]
-  containerStyle?: ViewStyle
+  containerStyle?: StyleProp<ViewStyle>
 }
 
 const SEARCH_DEFAULT_VALUE = {
@@ -35,6 +38,7 @@ export const Header: React.FC<Props> = ({
   title,
   containerStyle,
 }) => {
+  const {goBack} = useNavigation<StackNavigationProp<RootStackParamList>>()
   const { theme } = useTheme()
   const [activeSearch, setActiveSearch] =
     useState<ActiveSearch>(SEARCH_DEFAULT_VALUE)
@@ -75,6 +79,8 @@ export const Header: React.FC<Props> = ({
         <>
           <View style={styles.lac}>
             <Icon
+              name="arrow-back"
+              type="material"
               {...leftAction}
               style={{
                 fontSize: 25,
@@ -90,7 +96,7 @@ export const Header: React.FC<Props> = ({
                         onChangeText: leftAction?.onChangeText,
                         status: true,
                       })
-                  : () => {}
+                  : goBack
               }
               tvParallaxProperties
               color={theme?.colors.primary}

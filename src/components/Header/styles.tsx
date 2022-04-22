@@ -12,8 +12,7 @@ export default StyleSheet.create<Styles>({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 15,
-    height: 60,
-    marginTop: 35
+    paddingTop: 50,
   },
   lac: {
     flex: 1,

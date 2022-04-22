@@ -73,9 +73,8 @@ export declare type RootStackParamList = {
   MangaDetails: Anime
   MangaList: NavigatorScreenParams<MangaListDrawerParamList>
   Reader: {
-    animeTitle: string
+    anime: Anime
     chapter: Chapter
-    source: Source
   }
 }
 
