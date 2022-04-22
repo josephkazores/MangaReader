@@ -103,7 +103,7 @@ const loadChapterImages = async (animeTitle: string, chapter: Chapter) => {
     const response = await Axios.get(
       `https://mangasee123.com/read-online/${animeTitle}-chapter-${
         chapter.Chapter
-      }${chapter.index === 2 && '-index-2'}.html`,
+      }${chapter.index === 2 ? '-index-2' : ''}.html`,
     )
     if (response.status === 200) {
       const $ = cheerio.load(response.data)
