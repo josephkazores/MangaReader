@@ -32,7 +32,7 @@ export const Screen: React.FC<MangaListDrawerProps> = ({
   }, [sort, desc, source])
 
   return (
-    <View style={{ flexGrow: 1, paddingBottom: 100 }}>
+    <View style={{ flexGrow: 1}}>
       <Header
         title={source.name}
         leftAction={{

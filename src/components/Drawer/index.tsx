@@ -23,8 +23,11 @@ export const Drawer: React.FC<Props> = ({ Screens, CustomDrawer, screenOptions }
       screenOptions={{
         drawerPosition: 'right',
         headerShown: false,
-        drawerStyle: { width: Dimensions.get('screen').width * 0.6 },
-        ...screenOptions
+        drawerStyle: [
+          { width: Dimensions.get('screen').width * 0.6 },
+          screenOptions?.drawerStyle,
+        ],
+        ...screenOptions,
       }}
       drawerContent={
         CustomDrawer ? props => <CustomDrawer {...props} /> : undefined

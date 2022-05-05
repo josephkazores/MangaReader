@@ -1,7 +1,8 @@
 import { DrawerScreenProps } from '@react-navigation/drawer'
 import { NavigatorScreenParams } from '@react-navigation/native'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { ImageSourcePropType } from 'react-native'
+import { ReactNode } from 'react'
+import { ImageSourcePropType, ViewStyle } from 'react-native'
 
 export declare type Icon = {
   name: string
@@ -21,6 +22,41 @@ export declare type Icon = {
     | 'simple-line-icon'
     | 'zocial'
   size: number
+}
+
+declare type Content =
+  | {
+      type: 'checkbox' | 'radio'
+      value: boolean
+      title: string
+      onPress?: () => void
+    }
+  | {
+      type: 'input'
+      title: string
+      onChangeText?: (value: string) => void
+    }
+  | {
+      type: 'button'
+      title: string
+      icon?: Icon
+      onPress?: () => void
+    }
+  | {
+      type: 'select'
+      title: string
+      onChangeSelect: (value: string) => void
+      data: {
+        name: string
+        value: string
+      }[]
+    }
+
+export declare type Filter = {
+  name: string
+  type?: 'dropdown'
+  content: Content[]
+  style?: ViewStyle
 }
 
 ////---- Anime Types ----////
@@ -69,7 +105,7 @@ export declare type Chapter = {
 ////---- Root Navigation Params Types ----////
 
 export declare type RootStackParamList = {
-  Library: NavigatorScreenParams<LibraryDrawerParamList>
+  Home: undefined
   MangaDetails: Anime
   MangaList: NavigatorScreenParams<MangaListDrawerParamList>
   Reader: {
@@ -95,11 +131,6 @@ export declare type MangaListDrawerParamList = {
   }
 }
 
-export declare type LibraryDrawerParamList = {
-  Screen: undefined
-}
-
-
 ////---- Screen Params Types ----////
 
 export declare type Screens = {
@@ -122,10 +153,5 @@ export declare type ReaderProps = NativeStackScreenProps<
 
 export declare type MangaListDrawerProps = DrawerScreenProps<
   MangaListDrawerParamList,
-  'Screen'
->
-
-export declare type LibraryDrawerProps = DrawerScreenProps<
-  LibraryDrawerParamList,
   'Screen'
 >

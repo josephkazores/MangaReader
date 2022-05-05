@@ -13,19 +13,23 @@ export default StyleSheet.create<Styles>({
     alignItems: 'center',
     padding: 15,
     paddingTop: 50,
+    marginBottom: 9
   },
   lac: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 2,
   },
   rac: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
+    paddingVertical: 2,
   },
   title: {
     fontSize: 20,
+    paddingVertical: 2,
   },
 })

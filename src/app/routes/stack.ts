@@ -6,7 +6,7 @@ import { Screens } from '../../types'
 export const stack: Screens = [
   {
       component: TabNavigation,
-      name: "Library",
+      name: "Home",
   },
   {
       component: MangaDetails,

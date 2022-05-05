@@ -11,7 +11,7 @@ declare type State = {
 const INITIAL_STATE: State = {
   library: [],
   preferences: {
-    column: 4,
+    column: 3,
   },
 }
 

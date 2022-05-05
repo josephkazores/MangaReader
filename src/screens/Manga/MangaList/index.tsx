@@ -13,6 +13,7 @@ export const MangaList: React.FC = () => {
           name: 'Screen',
         },
       ]}
+      CustomDrawer={CustomDrawer}
     />
   )
 }

@@ -20,7 +20,6 @@ interface Props extends ChapterProps {
 export const Chapter: React.FC<Props> = ({anime, ...item}) => {
   const { navigate } = useNavigation<StackNavigationProp<RootStackParamList>>()
   const { theme } = useTheme()
-  const { source } = anime
 
   return (
     <TouchableOpacity
@@ -43,7 +42,7 @@ export const Chapter: React.FC<Props> = ({anime, ...item}) => {
           {item.Type} {item.Chapter}
         </Text>
         <Text style={{ fontSize: 13, marginTop: 3 }}>
-          {moment(item.Date).format('MMMM DD, YYYY')}
+          {moment(item.Date).fromNow()}
         </Text>
       </View>
       <Icon
