@@ -1,1 +1,1 @@
-export const MangaSeeLogo = require("./Sources/MangaSee.png")
+export const MangaSeeLogo = require('./Sources/MangaSee.png')

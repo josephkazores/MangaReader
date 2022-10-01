@@ -1,4 +1,4 @@
-import { Mangasee } from './Mangasee'
+import * as Mangasee from './Mangasee'
 
 export const Sources = {
   Mangasee,

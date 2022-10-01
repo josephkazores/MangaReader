@@ -4,7 +4,14 @@ import * as cheerio from 'cheerio'
 import { MangaSeeLogo } from '../../assets'
 import { Anime, Chapter } from '../../types'
 
-const image_source = (name = '') => `https://cover.nep.li/cover/${name}.jpg`
+export const image_source = async (name = '') => {
+  const response = await Axios.get(`https://mangasee123.com/search/`)
+  if (response.status === 200) {
+    const $ = cheerio.load(response.data)
+    console.log(JSON.stringify($('img').attr('class')))
+  }
+  return `https://temp.compsci88.com/cover/${name}.jpg`
+}
 
 //  sort
 //  v - most popular (all-time)
@@ -13,7 +20,7 @@ const image_source = (name = '') => `https://cover.nep.li/cover/${name}.jpg`
 //  y - year release
 //  s - alphabetically
 
-const loadMangaList = async (
+export const loadMangaList = async (
   sort: 'v' | 'vm' | 'lt' | 'y' | 's',
   desc: boolean,
 ) => {
@@ -71,7 +78,7 @@ const loadMangaList = async (
   }
 }
 
-const loadMangaDetails = async (name = '') => {
+export const loadMangaDetails = async (name = '') => {
   try {
     const response = await Axios.get('https://mangasee123.com/manga/' + name)
     if (response.status === 200) {
@@ -98,7 +105,10 @@ const loadMangaDetails = async (name = '') => {
   }
 }
 
-const loadChapterImages = async (animeTitle: string, chapter: Chapter) => {
+export const loadChapterImages = async (
+  animeTitle: string,
+  chapter: Chapter,
+) => {
   try {
     const response = await Axios.get(
       `https://mangasee123.com/read-online/${animeTitle}-chapter-${
@@ -139,7 +149,7 @@ const loadChapterImages = async (animeTitle: string, chapter: Chapter) => {
   }
 }
 
-const loadGenres = async () => {
+export const loadGenres = async () => {
   try {
     const response = await Axios.get(`https://mangasee123.com/search/`)
     if (response.status === 200) {
@@ -166,12 +176,4 @@ const loadGenres = async () => {
   } catch (error) {
     console.log(error)
   }
-}
-
-export const Mangasee = {
-  image_source,
-  loadMangaDetails,
-  loadMangaList,
-  loadChapterImages,
-  loadGenres,
 }

@@ -28,7 +28,7 @@ export const Item: React.FC<Source> = item => {
     } else {
       setStatus(false)
     }
-  }, [pinned])
+  }, [pinned, item])
 
   return (
     <TouchableOpacity
@@ -42,7 +42,7 @@ export const Item: React.FC<Source> = item => {
       <View style={styles.container}>
         <Image source={item.logo} style={{ height: 30, width: 30 }} />
         <Text style={{ fontSize: 16, marginLeft: 10 }}>
-          {item.name} ({item.language.toUpperCase()})
+          {item.name} {item.language && `(${item.language.toUpperCase()})`}
         </Text>
       </View>
       <View style={styles.container}>
